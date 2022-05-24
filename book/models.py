@@ -11,3 +11,14 @@ class Book(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+class BookItem(models.Model):
+    barCode = models.CharField(max_length=255)
+    borrowed = models.DateField()
+    dueDate = models.DateField()
+    genre = models.CharField(max_length=255)
+    status = models.CharField(max_length=255)
+    publicationDate = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f'{self.status}'
