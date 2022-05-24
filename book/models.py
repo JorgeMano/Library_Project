@@ -10,7 +10,7 @@ class Book(models.Model):
     #author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f'{self.title}'
+        return {self.title}
 
 class BookItem(models.Model):
     barCode = models.CharField(max_length=255)
@@ -21,4 +21,4 @@ class BookItem(models.Model):
     publicationDate = models.CharField(max_length=255)
 
     def __str__(self):
-        return f'{self.status}'
+        return {self.status}
