@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'book',
     'author',
     'rest_framework',
-    'rest_framework.authtoken',
-    'profile_user'
+    #'rest_framework.authtoken',
+    'profile_user',
 
 ]
 
@@ -125,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'profile_user.Users'
+AUTH_USER_MODEL = 'profile_user.Users_profile'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
