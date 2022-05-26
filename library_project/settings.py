@@ -40,10 +40,9 @@ INSTALLED_APPS = [
     'webapp',
     'book',
     'author',
+    'profile_user',
     'rest_framework',
     'rest_framework.authtoken',
-    'profile_user',
-
 ]
 
 MIDDLEWARE = [
