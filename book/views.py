@@ -38,7 +38,6 @@ class BookViewSet(viewsets.ModelViewSet):
             )
 
 class BookFeedViewSet(viewsets.ModelViewSet):
-    authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.BookFeedItemSerializer
     queryset = models.BookFeedItem.objects.all()
 
