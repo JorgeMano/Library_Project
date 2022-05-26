@@ -14,8 +14,6 @@ class BookSerializers(serializers.ModelSerializer):
         )
         return book
 
-
-
 class BookFeedItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.BookFeedItem

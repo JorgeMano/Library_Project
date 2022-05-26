@@ -1,14 +1,12 @@
 from django.shortcuts import render
 from rest_framework.response import Response
-from book import UsersProfile Book
+from book import Book
 from rest_framework import status, filters
 from book import BookSerializer
 from rest_framework import viewsets
 from book import serializers, models
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
-from rest_framework.permissions import IsAuthenticated
+
 
 class BookViewSet(viewsets.ModelViewSet):
 
@@ -43,9 +41,6 @@ class BookFeedViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.BookFeedItemSerializer
     queryset = models.BookFeedItem.objects.all()
-    permission_classes: (
-        permissions.UpdateOwnStatus,
-        IsAuthenticated)
 
     def perform_create(self, serializer):
-        serializer.save(user_profile=self.request.user)
+        serializer.save(book=self.request.book)
